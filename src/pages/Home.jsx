@@ -52,7 +52,6 @@ const Home = () => {
                     onMouseLeave={e => {
                       e.currentTarget.style.transform = 'scale(1)';
                     }}
-
                     
                   > 
 
@@ -64,6 +63,7 @@ const Home = () => {
                     style={{ height: "200px", objectFit: "cover" }}
                   />
                 )}
+
                   <div className="card-body">
                     <h5 className="card-title text-danger">{car.title}</h5>
                     <p className="card-text">Brand: {car.brand}</p> 
@@ -73,7 +73,9 @@ const Home = () => {
                     <p className="card-text">Location: {car.location}</p>
                     <p className="card-text">Transmission: {car.transmission}</p>
                      <p className="card-text">Rental Status: {car.rentalStatus}</p> 
+
                     <p className="card-text">Owner:{car.ownerName ?? 'Unknown'}</p>
+
                     
                     <button className="btn btn-danger mt-2 w-100" onClick={handleBookNow}>Book Now</button>
                 </div>

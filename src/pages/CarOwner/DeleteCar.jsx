@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Proposals() {
+export default function DeleteCar() {
   return (
     <div>
-      <h1>Proposals</h1>
+      Delete Carsss
     </div>
   )
 }

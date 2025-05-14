@@ -17,7 +17,7 @@ export default function Register() {
       email: "",
       password: "",
       phoneNumber: "",
-      role: 0,
+      role: 1,
     },
     onSubmit: handleSubmitForm,
     validate: handleValidationForm,
@@ -41,19 +41,19 @@ export default function Register() {
 
   function handleValidationForm(values) {
     const errors = {};
-    const nameRegex = /^[A-Z][a-z]{2,5}$/;
+    const nameRegex = /^[A-Za-z]{3,}$/;
     const phoneRegex = /^\+?[0-9]{2,15}$/;
     const emailRegex = /[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}/;
     const passwordRegex = /[a-zA-Z0-9-_@#$]{8,}/;
 
     if (!values.firstName) errors.firstName = "The first name is required";
-    else if (!nameRegex.test(values.firstName)) errors.firstName = "Start with a capital letter. 3–10 characters";
+    else if (!nameRegex.test(values.firstName)) errors.firstName = "The first name must be 3–10 characters";
 
     if (!values.lastName) errors.lastName = "The last name is required";
-    else if (!nameRegex.test(values.lastName)) errors.lastName = "Start with a capital letter. 3–10 characters";
+    else if (!nameRegex.test(values.lastName)) errors.lastName = "The last name must be 3–10 characters";
 
     if (!values.username) errors.username = "The user name is required";
-    else if (!nameRegex.test(values.username)) errors.username = "Start with a capital letter. 3–10 characters";
+    else if (!nameRegex.test(values.username)) errors.username = "The user name must be 3–10 characters";
 
     if (!values.phoneNumber) errors.phoneNumber = "Phone number is required";
     else if (!phoneRegex.test(values.phoneNumber)) errors.phoneNumber = "Invalid phone number format";
@@ -115,7 +115,7 @@ export default function Register() {
               value={formik.values.role}
               onChange={(e) => formik.setFieldValue("role", parseInt(e.target.value))}
             >
-              <option value={0}>Admin</option>
+              {/* <option value={0}>Admin</option> */}
               <option value={1}>Car Owner</option>
               <option value={2}>Renter</option>
             </select>

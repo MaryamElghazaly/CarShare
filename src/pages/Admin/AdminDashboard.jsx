@@ -1,8 +1,8 @@
 // ./pages/Admin/AdminDashboard.jsx
 import { useNavigate } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import '@fortawesome/fontawesome-free/css/all.min.css'
-import './AdminDashboard.css' // هنضيف ملف CSS خارجي لو عايزة مزيد من التحكم
+// import '@fortawesome/fontawesome-free/css/all.min.css'
+import './AdminDashboard.css'
 
 function AdminDashboard() {
   const navigate = useNavigate()

@@ -20,22 +20,19 @@ export default function Navbar() {
         <span className="navbar-brand h1 text-black">CarRental</span>
 
         <ul className="d-flex flex-row ms-auto list-unstyled mb-0">
-          {/* 🚗 Car Owner Links */}
+          {/*  Car Owner Links */}
           {isCarOwner && (
             <>
               <li className="me-5">
-                <NavLink to="/CarOwner/CarOwnerHome" className="text-black text-decoration-none">Home</NavLink>
+                <NavLink to="/CarOwner/CarOwnerDashboard" className="text-black text-decoration-none">Dashboard</NavLink>
               </li>
               <li className="me-5">
-                <NavLink to="/CarOwner/Proposals" className="text-black text-decoration-none">Proposals</NavLink>
-              </li>
-              <li className="me-5">
-                <NavLink to="/CarOwner/ManageCarPosts" className="text-black text-decoration-none">Car Posts</NavLink>
+                <NavLink to="/CarOwner/ApproveProposals" className="text-black text-decoration-none">Proposals</NavLink>
               </li>
             </>
           )}
 
-          {/* 🧑‍💼 Admin Links */}
+          {/*  Admin Links */}
           {isAdmin && (
             <>
               <li className="me-5">
@@ -50,7 +47,7 @@ export default function Navbar() {
             </>
           )}
 
-          {/* 👤 Renter Links */}
+          {/* Renter Links */}
           {isRenter && (
             <>
               <li className="me-5">

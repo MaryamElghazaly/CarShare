@@ -23,21 +23,27 @@ export default function Login() {
   async function handleSubmitForm(values) {
     try {
       const response = await axios.post('https://localhost:7009/api/Auth/login', values);
-      localStorage.setItem('token', response.data.token);  
+      const token = response.data.token;
+  
+      console.log("JWT Token:", token);
+  
+      localStorage.setItem('token', token);  
       login(response.data);  
-
-      const decodedToken = jwtDecode(response.data.token);
+  
+      const decodedToken = jwtDecode(token);
       const userRole = decodedToken.role;  
 
-      if (userRole === 'Admin') {
-        navigate("/Admin/AdminDashboard");
-      } else if (userRole === 1) {
-        navigate("/CarOwner/Proposala"); 
-      } else if (userRole === 'Renter') {
-        navigate("/Renter/RenterHome"); 
-      } else {
-        navigate("/Home");
-      }
+  
+        if (userRole === 'Admin') {
+          navigate("/Admin/AdminDashboard");
+        } else if (userRole === 'CarOwner') {
+          navigate("/CarOwner/CarOwnerDashboard");
+        } else if (userRole === 'Renter') {
+          navigate("/Renter/RenterHome"); 
+        } else {
+          navigate("/Home");
+        }
+
       
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
@@ -47,6 +53,7 @@ export default function Login() {
       }
     }
   }
+  
 
   function handleValidationForm(values) {
     const errors = {};

@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import "@fortawesome/fontawesome-free/css/all.min.css"
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './pages/Layout.jsx'
 import Home from './pages/Home.jsx'
@@ -10,14 +10,19 @@ import CarsList from './pages/CarsList.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Register from './pages/Auth/Register.jsx'
 import Login from './pages/Auth/Login.jsx'
-import { UserProvider } from './context/UserContext' // ✅
+import { UserProvider } from './context/UserContext' 
 import ManageUsers from './pages/Admin/ManageUsers.jsx'
 import ManagePosts from './pages/Admin/ManagePosts.jsx'
 import AdminDashboard from './pages/Admin/AdminDashboard.jsx'
-import Proposals from './pages/CarOwner/Proposals.jsx'  // تم تصحيح الاسم من Proposala إلى Proposals
 import RenterHome from './pages/Renter/RenterHome.jsx'
 import ManageCarPosts from './pages/CarOwner/ManageCarPosts.jsx'
-import CarOwnerHome from './pages/CarOwner/CarOwnerHome.jsx'
+import ApproveProposals from './pages/CarOwner/ApproveProposals.jsx';
+import RenterProposals from './pages/Renter/RenterProposals.jsx'
+import CarOwnerDashboard from './pages/CarOwner/CarOwnerDashboard';
+import AddCar from './pages/CarOwner/AddCar.jsx';
+import UpdateCar from './pages/CarOwner/UpdateCar.jsx';
+import MyCars from './pages/CarOwner/MyCars.jsx';
+import DeleteCar from './pages/CarOwner/DeleteCar.jsx';
 
 
 
@@ -39,12 +44,21 @@ const routing = createBrowserRouter([
       { path: "Admin/ManagePosts", element: <ManagePosts /> },
 
       // Car Owner Routes
-      { path: "CarOwner/Proposals", element: <Proposals /> },
       { path: "CarOwner/ManageCarPosts", element: <ManageCarPosts /> },
-      { path: "CarOwner/CarOwnerHome", element: <CarOwnerHome /> }, // تم تصحيح الاسم من Proposala إلى Proposals
+      { path: "CarOwner/ApproveProposals", element: <ApproveProposals /> },
+      { path: "CarOwner/CarOwnerDashboard", element: <CarOwnerDashboard /> }, 
+      { path: "CarOwner/AddCar", element: <AddCar /> },
+      { path: "CarOwner/MyCars", element: <MyCars /> },
+      {path: "CarOwner/UpdateCar/:carId" ,element: <UpdateCar />},
+
+      { path: "CarOwner/DeleteCar", element: <DeleteCar /> },
+
 
       // Renter Routes
       { path: "Renter/RenterHome", element: <RenterHome /> },
+      { path: "Renter/RenterProposals", element: <RenterProposals /> }
+
+
     ],
   },
 ]);

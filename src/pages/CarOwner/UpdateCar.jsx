@@ -83,25 +83,26 @@ const handleChange = (e) => {
     ...prev,
     [name]: numericFields.includes(name)
       ? name === "pricePerDay"
-        ? parseFloat(value)
+        ? parseFloat(value) 
         : Number(value)  
-      : value,
+      : value,  
   }));
 };
+
 
 const handleSubmit = async (e) => {
   e.preventDefault();
   const token = localStorage.getItem("token");
 
   try {
-    
     const updatedFormData = {
       ...formData,
-      carType: Number(formData.carType), 
-      transmission: Number(formData.transmission), 
+      carType: Number(formData.carType),
+      transmission: Number(formData.transmission),
     };
 
-    console.log("Submitting the following data: ", updatedFormData); // إضافة هذا السطر للتحقق من البيانات المرسلة
+    console.log("Submitting the following data: ", updatedFormData);
+    console.log("carType:", updatedFormData.carType); // ✅ التعديل هنا
 
     const response = await axios.put(
       `https://localhost:7009/api/Cars/${carId}`,
@@ -112,7 +113,7 @@ const handleSubmit = async (e) => {
         },
       }
     );
-    
+
     setSuccessMessage("Car updated successfully!");
     setError(null);
     setTimeout(() => navigate("/CarOwner/MyCars"), 1500);
@@ -121,6 +122,8 @@ const handleSubmit = async (e) => {
     setSuccessMessage("");
   }
 };
+
+
 
 
   return (
@@ -143,17 +146,16 @@ const handleSubmit = async (e) => {
 
         <div className="mb-3">
           <label className="form-label">Car Type</label>
-<select
-  className="form-select"
-  name="carType"
-  value={formData.carType}  // تأكد من الربط بشكل صحيح
-  onChange={handleChange}
-  required
->
-  {Object.entries(carTypes).map(([key, label]) => (
-    <option key={key} value={key}>{label}</option>
-  ))}
-</select>
+              <select
+                className="form-select"
+                name="carType"
+                value={formData.carType}  
+                onChange={handleChange}
+                required>
+               {Object.entries(carTypes).map(([key, label]) => (
+                 <option key={key} value={key}>{label}</option>
+               ))}
+             </select>
 
         </div>
 

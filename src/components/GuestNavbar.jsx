@@ -53,8 +53,9 @@ export default function Navbar() {
               <li className="me-5">
                 <NavLink to="/Renter/RenterHome" className="text-black text-decoration-none">Home</NavLink>
               </li>
-              <li className="me-5">
-                <NavLink to="/CarsList" className="text-black text-decoration-none">Cars List</NavLink>
+             
+                <li className="me-5">
+                <NavLink to="/Renter/Review" className="text-black text-decoration-none">Review</NavLink>
               </li>
             </>
           )}

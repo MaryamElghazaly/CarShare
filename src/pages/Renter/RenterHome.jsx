@@ -13,6 +13,12 @@ const RenterHome = () => {
     Navigate("/Renter/RenterProposals", { state: { selectedCar: car } });
   };
 
+
+  const handleWriteReview = (car) => {
+  Navigate("/Renter/Review", { state: { carId: car.carId } });
+};
+
+
   useEffect(() => {
     axios.get('https://localhost:7009/api/Cars')
       .then(response => {
@@ -107,6 +113,18 @@ const RenterHome = () => {
                   >
                     Apply For Rent Now
                   </button>
+
+
+                  <button
+  className="btn btn-outline-danger mt-2 w-100"
+  onClick={() => handleWriteReview(car)}
+>
+  Write a Review
+</button>
+
+
+
+                  
                 </div>
               </div>
             </div>

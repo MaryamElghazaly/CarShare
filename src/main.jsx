@@ -23,6 +23,7 @@ import AddCar from './pages/CarOwner/AddCar.jsx';
 import UpdateCar from './pages/CarOwner/UpdateCar.jsx';
 import MyCars from './pages/CarOwner/MyCars.jsx';
 import DeleteCar from './pages/CarOwner/DeleteCar.jsx';
+import Review from './pages/Renter/Review.jsx';
 
 
 
@@ -56,7 +57,8 @@ const routing = createBrowserRouter([
 
       // Renter Routes
       { path: "Renter/RenterHome", element: <RenterHome /> },
-      { path: "Renter/RenterProposals", element: <RenterProposals /> }
+      { path: "Renter/RenterProposals", element: <RenterProposals /> },
+       { path: "Renter/Review", element: <Review /> }
 
 
     ],

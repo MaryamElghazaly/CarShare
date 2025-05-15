@@ -116,7 +116,9 @@ const transmissionTypes = {
                     alt={car.title}
                     style={{ height: "200px", objectFit: "cover" }}
                   />
+                  
                 )}
+                
                 <div className="card-body">
                   <h5 className="card-title text-danger">{car.title}</h5>
                   <p className="card-text">Brand: {car.brand}</p>
@@ -124,9 +126,9 @@ const transmissionTypes = {
                   <p className="card-text">Model: {car.model}</p>
                   <p className="card-text">Year: {car.year}</p>
                   <p className="card-text">Price per day: ${car.pricePerDay}</p>
-                  <p className="card-text">Location: {car.location}</p>
-                 <p className="card-text">Car Type: {carTypes[car.type]}</p>
-                 <p className="card-text">Transmission: {transmissionTypes[car.transmission]}</p>
+                  <p className="card-text">Location: {car.location}</p>          
+                  <p className="card-text">Car Type: {carTypes[Number(car.carType)] ?? "Unknown"}</p>
+                  <p className="card-text">Transmission: {transmissionTypes[car.transmission]}</p>
                   <p className="card-text">License Plate: {car.licensePlate ? car.licensePlate : 'Not provided'}</p>
                   <p className="card-text">Rental Status: {car.rentalStatus}</p>
                   <p className="card-text">Owner: {car.ownerName ?? 'Unknown'}</p>

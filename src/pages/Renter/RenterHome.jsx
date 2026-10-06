@@ -104,7 +104,7 @@ const RenterHome = () => {
                   <p className="card-text">Year: {car.year}</p>
                   <p className="card-text">Price per day: ${car.pricePerDay}</p>
                   <p className="card-text">Location: {car.location}</p>
-                  <p className="card-text">Transmission: {car.transmission}</p>
+                  {/* <p className="card-text">Transmission: {car.transmission}</p> */}
                   <p className="card-text">Rental Status: {car.rentalStatus}</p>
                   <p className="card-text">Owner:{car.ownerName ?? 'Unknown'}</p>
                   <button

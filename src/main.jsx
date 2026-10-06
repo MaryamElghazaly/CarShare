@@ -6,7 +6,6 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './pages/Layout.jsx'
 import Home from './pages/Home.jsx'
-import CarsList from './pages/CarsList.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Register from './pages/Auth/Register.jsx'
 import Login from './pages/Auth/Login.jsx'
@@ -32,9 +31,8 @@ const routing = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { index: true, element: <Home /> }, // الصفحة الرئيسية تكون Home
+      { index: true, element: <Home /> }, 
       { path: "Home", element: <Home /> },
-      { path: "CarsList", element: <CarsList /> },
       { path: "Login", element: <Login /> },
       { path: "Register", element: <Register /> },
       { path: "*", element: <NotFound /> },

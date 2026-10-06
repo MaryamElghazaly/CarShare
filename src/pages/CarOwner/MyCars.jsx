@@ -81,7 +81,7 @@ const transmissionTypes = {
       });
 
       setCars((prevCars) => prevCars.filter((c) => c.carId !== car.carId));
-      navigate("/CarOwner");
+      navigate("/CarOwner/CarOwnerDashnoard");
     } catch (err) {
       console.error("Error deleting car:", err);
       setError("Failed to delete car. Please try again.");

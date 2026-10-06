@@ -54,7 +54,7 @@ const AddCar = () => {
       });
       alert('Car added successfully!');
       console.log('Car added:', response.data);
-      navigate('/CarOwner'); // ✅ توجيه بعد الإضافة
+      navigate('/CarOwner/CarOwnerDashboard'); // ✅ توجيه بعد الإضافة
     } catch (error) {
       console.error('Error adding car:', error);
       alert('Something went wrong while adding the car.');

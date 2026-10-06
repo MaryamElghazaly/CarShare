@@ -107,7 +107,7 @@ const rejectCar = async (carId) => {
                   <p className="card-text"><strong>Brand:</strong> {car.brand}</p>
                   <p className="card-text"><strong>Model:</strong> {car.model}</p>
                   <p className="card-text"><strong>Year:</strong> {car.year}</p>
-                  <p className="card-text"><strong>Transmission:</strong>{car.transmission}</p>
+                  <p className="card-text"><strong>Transmission:</strong> Automatic</p>
                   <p className="card-text"><strong>License Plate:</strong> {car.licensePlate}</p>
                   <p className="card-text"><strong>Location:</strong> {car.location}</p>
                   <p className="card-text"><strong>Price/Day:</strong> ${car.pricePerDay}</p>

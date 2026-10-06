@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import Layout from './pages/Layout.jsx'
 import Home from './pages/Home.jsx'
 import NotFound from './pages/NotFound.jsx'
@@ -24,9 +24,7 @@ import MyCars from './pages/CarOwner/MyCars.jsx';
 import DeleteCar from './pages/CarOwner/DeleteCar.jsx';
 import Review from './pages/Renter/Review.jsx';
 
-
-
-const routing = createBrowserRouter([
+const routing = createHashRouter([
   {
     path: "/",
     element: <Layout />,
@@ -48,17 +46,13 @@ const routing = createBrowserRouter([
       { path: "CarOwner/CarOwnerDashboard", element: <CarOwnerDashboard /> }, 
       { path: "CarOwner/AddCar", element: <AddCar /> },
       { path: "CarOwner/MyCars", element: <MyCars /> },
-      {path: "CarOwner/UpdateCar/:carId" ,element: <UpdateCar />},
-
+      { path: "CarOwner/UpdateCar/:carId", element: <UpdateCar /> },
       { path: "CarOwner/DeleteCar", element: <DeleteCar /> },
-
 
       // Renter Routes
       { path: "Renter/RenterHome", element: <RenterHome /> },
       { path: "Renter/RenterProposals", element: <RenterProposals /> },
-       { path: "Renter/Review", element: <Review /> }
-
-
+      { path: "Renter/Review", element: <Review /> }
     ],
   },
 ]);

@@ -17,20 +17,20 @@ A modern, responsive peer-to-peer car sharing and rental web application built w
 ---
 
 ## 📌 Table of Contents
-- [✨ Features by Role](#-features-by-role)
-  - [👤 Guest / Public](#-guest--public)
-  - [🚘 Renter Portal](#-renter-portal)
-  - [🔑 Car Owner Portal](#-car-owner-portal)
-  - [🛡️ Admin Portal](#️-admin-portal)
-- [🛠️ Tech Stack](#️-tech-stack)
-- [📂 Project Structure](#-project-structure)
-- [🚀 Getting Started](#-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running Locally](#running-locally)
-  - [Building for Production](#building-for-production)
-  - [Deploying to GitHub Pages](#deploying-to-github-pages)
-- [🔌 Backend API Repository](#-backend-api-repository)
+* [Features by Role](#-features-by-role)
+  * [Guest / Public](#-guest--public)
+  * [Renter Portal](#-renter-portal)
+  * [Car Owner Portal](#-car-owner-portal)
+  * [Admin Portal](#️-admin-portal)
+* [Tech Stack](#️-tech-stack)
+* [Project Structure](#-project-structure)
+* [Getting Started](#-getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+  * [Running Locally](#running-locally)
+  * [Building for Production](#building-for-production)
+  * [Deploying to GitHub Pages](#deploying-to-github-pages)
+* [Backend API Repository](#-backend-api-repository)
 
 ---
 
@@ -75,26 +75,24 @@ A modern, responsive peer-to-peer car sharing and rental web application built w
 
 ## 📂 Project Structure
 
-```text
-├── public/                 # Static assets
-├── src/
-│   ├── assets/             # Images and illustrations (e.g., 404 page)
-│   ├── components/         # Shared components (Navbar, Footer, Layout)
-│   ├── context/            # React Context (UserContext for Auth state)
-│   ├── pages/
-│   │   ├── Admin/          # Admin Dashboard, ManageUsers, ManagePosts
-│   │   ├── Auth/           # Login, Register
-│   │   ├── CarOwner/       # AddCar, MyCars, UpdateCar, ApproveProposals
-│   │   ├── Renter/         # RenterHome, RenterProposals, Review
-│   │   ├── Home.jsx        # Landing page
-│   │   ├── Layout.jsx      # Base layout with Navbar and Footer
-│   │   └── NotFound.jsx    # 404 Error page
-│   ├── App.jsx
-│   ├── index.css
-│   └── main.jsx            # Application entry point and router configuration
-├── vite.config.js          # Vite build and alias configuration
-└── package.json            # Scripts and dependencies
-```
+* **public/**: Static public assets
+* **src/**
+  * **assets/**: Images and illustrations (e.g., 404 page)
+  * **components/**: Shared components (`Navbar`, `Footer`, `Layout`)
+  * **context/**: React Context (`UserContext` for Auth state)
+  * **pages/**
+    * **Admin/**: `AdminDashboard`, `ManageUsers`, `ManagePosts`
+    * **Auth/**: `Login`, `Register`
+    * **CarOwner/**: `AddCar`, `MyCars`, `UpdateCar`, `ApproveProposals`
+    * **Renter/**: `RenterHome`, `RenterProposals`, `Review`
+    * `Home.jsx`: Landing page
+    * `Layout.jsx`: Base layout wrapper
+    * `NotFound.jsx`: 404 Error page
+  * `App.jsx`
+  * `index.css`
+  * `main.jsx`: Application entry point and router configuration
+* **vite.config.js**: Vite build configuration
+* **package.json**: Dependencies and deployment scripts
 
 ---
 
